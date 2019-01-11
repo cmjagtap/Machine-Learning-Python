@@ -1,0 +1,1932 @@
+
+
+```python
+import pandas as pd
+df=pd.read_csv("kotak.csv")
+
+```
+
+
+```python
+df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Symbol</th>
+      <th>Series</th>
+      <th>Date</th>
+      <th>Prev Close</th>
+      <th>Open Price</th>
+      <th>High Price</th>
+      <th>Low Price</th>
+      <th>Last Price</th>
+      <th>Close Price</th>
+      <th>Average Price</th>
+      <th>Total Traded Quantity</th>
+      <th>Turnover</th>
+      <th>No. of Trades</th>
+      <th>Deliverable Qty</th>
+      <th>% Dly Qt to Traded Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>29-Mar-2016</td>
+      <td>669.60</td>
+      <td>670.05</td>
+      <td>682.00</td>
+      <td>668.95</td>
+      <td>672.15</td>
+      <td>671.50</td>
+      <td>674.29</td>
+      <td>1966330</td>
+      <td>1.325876e+09</td>
+      <td>39305</td>
+      <td>1082449</td>
+      <td>55.05</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>30-Mar-2016</td>
+      <td>671.50</td>
+      <td>675.05</td>
+      <td>686.50</td>
+      <td>665.50</td>
+      <td>684.60</td>
+      <td>683.85</td>
+      <td>677.12</td>
+      <td>2827418</td>
+      <td>1.914498e+09</td>
+      <td>92647</td>
+      <td>1905894</td>
+      <td>67.41</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>31-Mar-2016</td>
+      <td>683.85</td>
+      <td>677.10</td>
+      <td>694.90</td>
+      <td>677.10</td>
+      <td>682.95</td>
+      <td>680.65</td>
+      <td>683.49</td>
+      <td>3982132</td>
+      <td>2.721739e+09</td>
+      <td>74415</td>
+      <td>2646068</td>
+      <td>66.45</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>01-Apr-2016</td>
+      <td>680.65</td>
+      <td>682.00</td>
+      <td>686.65</td>
+      <td>677.15</td>
+      <td>678.10</td>
+      <td>679.90</td>
+      <td>680.69</td>
+      <td>1470326</td>
+      <td>1.000838e+09</td>
+      <td>59174</td>
+      <td>774308</td>
+      <td>52.66</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>04-Apr-2016</td>
+      <td>679.90</td>
+      <td>681.50</td>
+      <td>689.30</td>
+      <td>674.25</td>
+      <td>685.30</td>
+      <td>687.30</td>
+      <td>680.84</td>
+      <td>2059957</td>
+      <td>1.402508e+09</td>
+      <td>52460</td>
+      <td>1388551</td>
+      <td>67.41</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>05-Apr-2016</td>
+      <td>687.30</td>
+      <td>684.00</td>
+      <td>684.75</td>
+      <td>664.75</td>
+      <td>665.50</td>
+      <td>668.75</td>
+      <td>674.27</td>
+      <td>2892523</td>
+      <td>1.950343e+09</td>
+      <td>51208</td>
+      <td>1902538</td>
+      <td>65.77</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>06-Apr-2016</td>
+      <td>668.75</td>
+      <td>669.00</td>
+      <td>674.30</td>
+      <td>664.30</td>
+      <td>668.40</td>
+      <td>668.00</td>
+      <td>669.30</td>
+      <td>1683758</td>
+      <td>1.126935e+09</td>
+      <td>74449</td>
+      <td>1083886</td>
+      <td>64.37</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>07-Apr-2016</td>
+      <td>668.00</td>
+      <td>667.00</td>
+      <td>668.00</td>
+      <td>655.50</td>
+      <td>663.85</td>
+      <td>662.50</td>
+      <td>662.70</td>
+      <td>1619424</td>
+      <td>1.073198e+09</td>
+      <td>69714</td>
+      <td>936678</td>
+      <td>57.84</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>08-Apr-2016</td>
+      <td>662.50</td>
+      <td>658.10</td>
+      <td>670.40</td>
+      <td>658.10</td>
+      <td>665.10</td>
+      <td>665.35</td>
+      <td>665.57</td>
+      <td>1007741</td>
+      <td>6.707269e+08</td>
+      <td>27284</td>
+      <td>625166</td>
+      <td>62.04</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>11-Apr-2016</td>
+      <td>665.35</td>
+      <td>670.90</td>
+      <td>674.95</td>
+      <td>660.30</td>
+      <td>669.85</td>
+      <td>671.30</td>
+      <td>667.55</td>
+      <td>1990818</td>
+      <td>1.328971e+09</td>
+      <td>42521</td>
+      <td>1230445</td>
+      <td>61.81</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>12-Apr-2016</td>
+      <td>671.30</td>
+      <td>669.85</td>
+      <td>682.05</td>
+      <td>669.75</td>
+      <td>682.00</td>
+      <td>677.35</td>
+      <td>676.66</td>
+      <td>1185688</td>
+      <td>8.023093e+08</td>
+      <td>27167</td>
+      <td>763606</td>
+      <td>64.40</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>13-Apr-2016</td>
+      <td>677.35</td>
+      <td>687.00</td>
+      <td>699.95</td>
+      <td>683.20</td>
+      <td>690.65</td>
+      <td>692.35</td>
+      <td>692.81</td>
+      <td>2437798</td>
+      <td>1.688937e+09</td>
+      <td>49904</td>
+      <td>1702339</td>
+      <td>69.83</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>18-Apr-2016</td>
+      <td>692.35</td>
+      <td>691.10</td>
+      <td>691.10</td>
+      <td>657.70</td>
+      <td>683.00</td>
+      <td>683.35</td>
+      <td>681.49</td>
+      <td>1638201</td>
+      <td>1.116413e+09</td>
+      <td>50623</td>
+      <td>851676</td>
+      <td>51.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>20-Apr-2016</td>
+      <td>683.35</td>
+      <td>687.40</td>
+      <td>692.00</td>
+      <td>680.20</td>
+      <td>685.60</td>
+      <td>687.15</td>
+      <td>686.71</td>
+      <td>1087651</td>
+      <td>7.469055e+08</td>
+      <td>39154</td>
+      <td>665477</td>
+      <td>61.18</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>21-Apr-2016</td>
+      <td>687.15</td>
+      <td>689.00</td>
+      <td>689.60</td>
+      <td>683.15</td>
+      <td>685.55</td>
+      <td>686.70</td>
+      <td>686.04</td>
+      <td>2137424</td>
+      <td>1.466350e+09</td>
+      <td>41638</td>
+      <td>1509768</td>
+      <td>70.63</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>22-Apr-2016</td>
+      <td>686.70</td>
+      <td>680.05</td>
+      <td>683.75</td>
+      <td>672.95</td>
+      <td>678.40</td>
+      <td>676.10</td>
+      <td>678.81</td>
+      <td>1975006</td>
+      <td>1.340648e+09</td>
+      <td>37058</td>
+      <td>1492372</td>
+      <td>75.56</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>25-Apr-2016</td>
+      <td>676.10</td>
+      <td>671.10</td>
+      <td>682.85</td>
+      <td>671.10</td>
+      <td>682.50</td>
+      <td>680.45</td>
+      <td>678.53</td>
+      <td>1211689</td>
+      <td>8.221697e+08</td>
+      <td>26929</td>
+      <td>833539</td>
+      <td>68.79</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>26-Apr-2016</td>
+      <td>680.45</td>
+      <td>679.95</td>
+      <td>705.00</td>
+      <td>678.85</td>
+      <td>704.10</td>
+      <td>700.85</td>
+      <td>692.68</td>
+      <td>2108459</td>
+      <td>1.460480e+09</td>
+      <td>36778</td>
+      <td>1347560</td>
+      <td>63.91</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>27-Apr-2016</td>
+      <td>700.85</td>
+      <td>702.40</td>
+      <td>719.80</td>
+      <td>701.00</td>
+      <td>711.45</td>
+      <td>712.50</td>
+      <td>712.52</td>
+      <td>1929112</td>
+      <td>1.374540e+09</td>
+      <td>66441</td>
+      <td>1112804</td>
+      <td>57.68</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>28-Apr-2016</td>
+      <td>712.50</td>
+      <td>715.00</td>
+      <td>718.40</td>
+      <td>698.50</td>
+      <td>701.10</td>
+      <td>701.45</td>
+      <td>705.98</td>
+      <td>1515244</td>
+      <td>1.069736e+09</td>
+      <td>39303</td>
+      <td>957955</td>
+      <td>63.22</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>29-Apr-2016</td>
+      <td>701.45</td>
+      <td>699.00</td>
+      <td>719.35</td>
+      <td>695.50</td>
+      <td>715.85</td>
+      <td>717.15</td>
+      <td>711.13</td>
+      <td>1490141</td>
+      <td>1.059683e+09</td>
+      <td>33445</td>
+      <td>795715</td>
+      <td>53.40</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>02-May-2016</td>
+      <td>717.15</td>
+      <td>714.20</td>
+      <td>724.75</td>
+      <td>712.10</td>
+      <td>717.10</td>
+      <td>718.20</td>
+      <td>719.45</td>
+      <td>1296560</td>
+      <td>9.328084e+08</td>
+      <td>25756</td>
+      <td>697180</td>
+      <td>53.77</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>03-May-2016</td>
+      <td>718.20</td>
+      <td>719.00</td>
+      <td>722.95</td>
+      <td>699.00</td>
+      <td>708.10</td>
+      <td>707.45</td>
+      <td>709.20</td>
+      <td>1358193</td>
+      <td>9.632330e+08</td>
+      <td>36880</td>
+      <td>676379</td>
+      <td>49.80</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>04-May-2016</td>
+      <td>707.45</td>
+      <td>706.05</td>
+      <td>720.60</td>
+      <td>704.80</td>
+      <td>711.00</td>
+      <td>712.65</td>
+      <td>716.02</td>
+      <td>2111368</td>
+      <td>1.511783e+09</td>
+      <td>48736</td>
+      <td>1457516</td>
+      <td>69.03</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>05-May-2016</td>
+      <td>712.65</td>
+      <td>713.90</td>
+      <td>715.25</td>
+      <td>704.05</td>
+      <td>710.45</td>
+      <td>709.15</td>
+      <td>708.64</td>
+      <td>975973</td>
+      <td>6.916138e+08</td>
+      <td>28322</td>
+      <td>584071</td>
+      <td>59.84</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>06-May-2016</td>
+      <td>709.15</td>
+      <td>706.05</td>
+      <td>710.00</td>
+      <td>696.10</td>
+      <td>703.45</td>
+      <td>702.95</td>
+      <td>701.34</td>
+      <td>667263</td>
+      <td>4.679815e+08</td>
+      <td>22257</td>
+      <td>324748</td>
+      <td>48.67</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>09-May-2016</td>
+      <td>702.95</td>
+      <td>703.00</td>
+      <td>716.00</td>
+      <td>702.90</td>
+      <td>714.00</td>
+      <td>713.85</td>
+      <td>712.75</td>
+      <td>1885335</td>
+      <td>1.343769e+09</td>
+      <td>58420</td>
+      <td>1292287</td>
+      <td>68.54</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>10-May-2016</td>
+      <td>713.85</td>
+      <td>717.75</td>
+      <td>730.00</td>
+      <td>711.40</td>
+      <td>730.00</td>
+      <td>722.85</td>
+      <td>717.01</td>
+      <td>1576803</td>
+      <td>1.130586e+09</td>
+      <td>36417</td>
+      <td>984522</td>
+      <td>62.44</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>11-May-2016</td>
+      <td>722.85</td>
+      <td>717.80</td>
+      <td>737.00</td>
+      <td>714.00</td>
+      <td>730.40</td>
+      <td>731.55</td>
+      <td>730.08</td>
+      <td>4117417</td>
+      <td>3.006055e+09</td>
+      <td>92446</td>
+      <td>1601722</td>
+      <td>38.90</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>12-May-2016</td>
+      <td>731.55</td>
+      <td>735.70</td>
+      <td>743.75</td>
+      <td>721.00</td>
+      <td>726.60</td>
+      <td>726.75</td>
+      <td>734.10</td>
+      <td>2785763</td>
+      <td>2.045032e+09</td>
+      <td>65184</td>
+      <td>1435747</td>
+      <td>51.54</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>472</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>14-Feb-2018</td>
+      <td>1042.95</td>
+      <td>1050.00</td>
+      <td>1052.35</td>
+      <td>1036.80</td>
+      <td>1038.90</td>
+      <td>1042.45</td>
+      <td>1044.78</td>
+      <td>1187333</td>
+      <td>1.240505e+09</td>
+      <td>43159</td>
+      <td>749302</td>
+      <td>63.11</td>
+    </tr>
+    <tr>
+      <th>473</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>15-Feb-2018</td>
+      <td>1042.45</td>
+      <td>1043.50</td>
+      <td>1047.50</td>
+      <td>1033.00</td>
+      <td>1043.75</td>
+      <td>1042.15</td>
+      <td>1040.93</td>
+      <td>908706</td>
+      <td>9.459032e+08</td>
+      <td>39452</td>
+      <td>531965</td>
+      <td>58.54</td>
+    </tr>
+    <tr>
+      <th>474</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>16-Feb-2018</td>
+      <td>1042.15</td>
+      <td>1043.00</td>
+      <td>1062.00</td>
+      <td>1040.85</td>
+      <td>1052.00</td>
+      <td>1050.20</td>
+      <td>1053.48</td>
+      <td>1655606</td>
+      <td>1.744153e+09</td>
+      <td>30876</td>
+      <td>969399</td>
+      <td>58.55</td>
+    </tr>
+    <tr>
+      <th>475</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>19-Feb-2018</td>
+      <td>1050.20</td>
+      <td>1059.00</td>
+      <td>1059.00</td>
+      <td>1046.55</td>
+      <td>1055.00</td>
+      <td>1056.20</td>
+      <td>1054.03</td>
+      <td>1188168</td>
+      <td>1.252368e+09</td>
+      <td>45338</td>
+      <td>581060</td>
+      <td>48.90</td>
+    </tr>
+    <tr>
+      <th>476</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>20-Feb-2018</td>
+      <td>1056.20</td>
+      <td>1056.20</td>
+      <td>1065.40</td>
+      <td>1041.70</td>
+      <td>1041.75</td>
+      <td>1045.80</td>
+      <td>1053.25</td>
+      <td>835351</td>
+      <td>8.798366e+08</td>
+      <td>34929</td>
+      <td>406161</td>
+      <td>48.62</td>
+    </tr>
+    <tr>
+      <th>477</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>21-Feb-2018</td>
+      <td>1045.80</td>
+      <td>1047.70</td>
+      <td>1060.80</td>
+      <td>1042.55</td>
+      <td>1055.00</td>
+      <td>1055.05</td>
+      <td>1055.09</td>
+      <td>3572028</td>
+      <td>3.768808e+09</td>
+      <td>27493</td>
+      <td>3138496</td>
+      <td>87.86</td>
+    </tr>
+    <tr>
+      <th>478</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>22-Feb-2018</td>
+      <td>1055.05</td>
+      <td>1052.50</td>
+      <td>1077.50</td>
+      <td>1050.65</td>
+      <td>1072.00</td>
+      <td>1072.50</td>
+      <td>1068.79</td>
+      <td>5142330</td>
+      <td>5.496094e+09</td>
+      <td>58860</td>
+      <td>3578103</td>
+      <td>69.58</td>
+    </tr>
+    <tr>
+      <th>479</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>23-Feb-2018</td>
+      <td>1072.50</td>
+      <td>1072.50</td>
+      <td>1083.30</td>
+      <td>1072.45</td>
+      <td>1082.10</td>
+      <td>1080.85</td>
+      <td>1077.97</td>
+      <td>2272854</td>
+      <td>2.450077e+09</td>
+      <td>31112</td>
+      <td>1845405</td>
+      <td>81.19</td>
+    </tr>
+    <tr>
+      <th>480</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>26-Feb-2018</td>
+      <td>1080.85</td>
+      <td>1081.00</td>
+      <td>1109.60</td>
+      <td>1081.00</td>
+      <td>1105.00</td>
+      <td>1105.15</td>
+      <td>1099.18</td>
+      <td>1817998</td>
+      <td>1.998302e+09</td>
+      <td>56339</td>
+      <td>1122818</td>
+      <td>61.76</td>
+    </tr>
+    <tr>
+      <th>481</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>27-Feb-2018</td>
+      <td>1105.15</td>
+      <td>1105.00</td>
+      <td>1105.00</td>
+      <td>1088.10</td>
+      <td>1093.45</td>
+      <td>1093.05</td>
+      <td>1096.22</td>
+      <td>1034120</td>
+      <td>1.133628e+09</td>
+      <td>31649</td>
+      <td>618729</td>
+      <td>59.83</td>
+    </tr>
+    <tr>
+      <th>482</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>28-Feb-2018</td>
+      <td>1093.05</td>
+      <td>1090.00</td>
+      <td>1095.20</td>
+      <td>1084.55</td>
+      <td>1088.00</td>
+      <td>1090.55</td>
+      <td>1089.89</td>
+      <td>886902</td>
+      <td>9.666228e+08</td>
+      <td>29314</td>
+      <td>461624</td>
+      <td>52.05</td>
+    </tr>
+    <tr>
+      <th>483</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>01-Mar-2018</td>
+      <td>1090.55</td>
+      <td>1088.10</td>
+      <td>1103.75</td>
+      <td>1086.00</td>
+      <td>1095.00</td>
+      <td>1095.70</td>
+      <td>1095.53</td>
+      <td>1480594</td>
+      <td>1.622035e+09</td>
+      <td>33342</td>
+      <td>1077544</td>
+      <td>72.78</td>
+    </tr>
+    <tr>
+      <th>484</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>05-Mar-2018</td>
+      <td>1095.70</td>
+      <td>1090.00</td>
+      <td>1103.85</td>
+      <td>1080.80</td>
+      <td>1097.80</td>
+      <td>1100.00</td>
+      <td>1095.04</td>
+      <td>2409121</td>
+      <td>2.638085e+09</td>
+      <td>44783</td>
+      <td>1701305</td>
+      <td>70.62</td>
+    </tr>
+    <tr>
+      <th>485</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>06-Mar-2018</td>
+      <td>1100.00</td>
+      <td>1105.00</td>
+      <td>1105.95</td>
+      <td>1075.30</td>
+      <td>1079.65</td>
+      <td>1082.45</td>
+      <td>1097.09</td>
+      <td>2404151</td>
+      <td>2.637570e+09</td>
+      <td>43072</td>
+      <td>1856646</td>
+      <td>77.23</td>
+    </tr>
+    <tr>
+      <th>486</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>07-Mar-2018</td>
+      <td>1082.45</td>
+      <td>1082.20</td>
+      <td>1097.60</td>
+      <td>1073.30</td>
+      <td>1088.05</td>
+      <td>1085.10</td>
+      <td>1085.89</td>
+      <td>2965912</td>
+      <td>3.220645e+09</td>
+      <td>47954</td>
+      <td>2312256</td>
+      <td>77.96</td>
+    </tr>
+    <tr>
+      <th>487</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>08-Mar-2018</td>
+      <td>1085.10</td>
+      <td>1088.70</td>
+      <td>1093.10</td>
+      <td>1074.30</td>
+      <td>1083.00</td>
+      <td>1082.30</td>
+      <td>1081.77</td>
+      <td>1751666</td>
+      <td>1.894905e+09</td>
+      <td>52223</td>
+      <td>1184956</td>
+      <td>67.65</td>
+    </tr>
+    <tr>
+      <th>488</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>09-Mar-2018</td>
+      <td>1082.30</td>
+      <td>1085.00</td>
+      <td>1091.90</td>
+      <td>1076.65</td>
+      <td>1080.70</td>
+      <td>1082.45</td>
+      <td>1082.23</td>
+      <td>1644991</td>
+      <td>1.780264e+09</td>
+      <td>62280</td>
+      <td>1248884</td>
+      <td>75.92</td>
+    </tr>
+    <tr>
+      <th>489</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>12-Mar-2018</td>
+      <td>1082.45</td>
+      <td>1087.50</td>
+      <td>1105.00</td>
+      <td>1083.50</td>
+      <td>1097.55</td>
+      <td>1100.60</td>
+      <td>1097.67</td>
+      <td>1255474</td>
+      <td>1.378101e+09</td>
+      <td>37009</td>
+      <td>854262</td>
+      <td>68.04</td>
+    </tr>
+    <tr>
+      <th>490</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>13-Mar-2018</td>
+      <td>1100.60</td>
+      <td>1099.95</td>
+      <td>1108.50</td>
+      <td>1078.95</td>
+      <td>1082.80</td>
+      <td>1083.90</td>
+      <td>1094.29</td>
+      <td>1380164</td>
+      <td>1.510306e+09</td>
+      <td>58509</td>
+      <td>755750</td>
+      <td>54.76</td>
+    </tr>
+    <tr>
+      <th>491</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>14-Mar-2018</td>
+      <td>1083.90</td>
+      <td>1080.00</td>
+      <td>1085.05</td>
+      <td>1070.00</td>
+      <td>1085.00</td>
+      <td>1081.75</td>
+      <td>1077.85</td>
+      <td>1209100</td>
+      <td>1.303224e+09</td>
+      <td>37890</td>
+      <td>745342</td>
+      <td>61.64</td>
+    </tr>
+    <tr>
+      <th>492</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>15-Mar-2018</td>
+      <td>1081.75</td>
+      <td>1085.00</td>
+      <td>1091.95</td>
+      <td>1078.65</td>
+      <td>1083.50</td>
+      <td>1085.65</td>
+      <td>1083.93</td>
+      <td>1368171</td>
+      <td>1.482995e+09</td>
+      <td>43126</td>
+      <td>945156</td>
+      <td>69.08</td>
+    </tr>
+    <tr>
+      <th>493</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>16-Mar-2018</td>
+      <td>1085.65</td>
+      <td>1081.65</td>
+      <td>1082.00</td>
+      <td>1056.40</td>
+      <td>1062.00</td>
+      <td>1060.75</td>
+      <td>1067.47</td>
+      <td>2724910</td>
+      <td>2.908749e+09</td>
+      <td>78553</td>
+      <td>2180266</td>
+      <td>80.01</td>
+    </tr>
+    <tr>
+      <th>494</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>19-Mar-2018</td>
+      <td>1060.75</td>
+      <td>1064.70</td>
+      <td>1065.60</td>
+      <td>1045.25</td>
+      <td>1048.30</td>
+      <td>1049.00</td>
+      <td>1052.23</td>
+      <td>1880023</td>
+      <td>1.978210e+09</td>
+      <td>35159</td>
+      <td>1403002</td>
+      <td>74.63</td>
+    </tr>
+    <tr>
+      <th>495</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>20-Mar-2018</td>
+      <td>1049.00</td>
+      <td>1047.90</td>
+      <td>1051.45</td>
+      <td>1038.60</td>
+      <td>1049.60</td>
+      <td>1045.30</td>
+      <td>1043.95</td>
+      <td>987156</td>
+      <td>1.030544e+09</td>
+      <td>27489</td>
+      <td>576314</td>
+      <td>58.38</td>
+    </tr>
+    <tr>
+      <th>496</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>21-Mar-2018</td>
+      <td>1045.30</td>
+      <td>1054.80</td>
+      <td>1061.95</td>
+      <td>1045.55</td>
+      <td>1052.60</td>
+      <td>1051.10</td>
+      <td>1051.43</td>
+      <td>1741161</td>
+      <td>1.830717e+09</td>
+      <td>32853</td>
+      <td>1290093</td>
+      <td>74.09</td>
+    </tr>
+    <tr>
+      <th>497</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>22-Mar-2018</td>
+      <td>1051.10</td>
+      <td>1051.10</td>
+      <td>1059.50</td>
+      <td>1048.10</td>
+      <td>1049.00</td>
+      <td>1053.05</td>
+      <td>1054.28</td>
+      <td>1765315</td>
+      <td>1.861131e+09</td>
+      <td>33352</td>
+      <td>1262254</td>
+      <td>71.50</td>
+    </tr>
+    <tr>
+      <th>498</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>23-Mar-2018</td>
+      <td>1053.05</td>
+      <td>1040.90</td>
+      <td>1046.80</td>
+      <td>1028.40</td>
+      <td>1039.05</td>
+      <td>1038.80</td>
+      <td>1037.69</td>
+      <td>1961492</td>
+      <td>2.035424e+09</td>
+      <td>39466</td>
+      <td>1395038</td>
+      <td>71.12</td>
+    </tr>
+    <tr>
+      <th>499</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>26-Mar-2018</td>
+      <td>1038.80</td>
+      <td>1040.00</td>
+      <td>1040.90</td>
+      <td>1028.85</td>
+      <td>1040.00</td>
+      <td>1039.35</td>
+      <td>1036.11</td>
+      <td>7817249</td>
+      <td>8.099539e+09</td>
+      <td>55047</td>
+      <td>7271966</td>
+      <td>93.02</td>
+    </tr>
+    <tr>
+      <th>500</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>27-Mar-2018</td>
+      <td>1039.35</td>
+      <td>1043.00</td>
+      <td>1058.00</td>
+      <td>1043.00</td>
+      <td>1049.30</td>
+      <td>1049.85</td>
+      <td>1051.41</td>
+      <td>2148618</td>
+      <td>2.259088e+09</td>
+      <td>31188</td>
+      <td>1680047</td>
+      <td>78.19</td>
+    </tr>
+    <tr>
+      <th>501</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>28-Mar-2018</td>
+      <td>1049.85</td>
+      <td>1044.05</td>
+      <td>1057.00</td>
+      <td>1040.60</td>
+      <td>1052.35</td>
+      <td>1047.80</td>
+      <td>1050.48</td>
+      <td>5927388</td>
+      <td>6.226583e+09</td>
+      <td>66343</td>
+      <td>5356167</td>
+      <td>90.36</td>
+    </tr>
+  </tbody>
+</table>
+<p>502 rows × 15 columns</p>
+</div>
+
+
+print (df[['Symbol','Date','Close Price']])
+
+```python
+df[['Symbol','Date']]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Symbol</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>KOTAKBANK</td>
+      <td>29-Mar-2016</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>KOTAKBANK</td>
+      <td>30-Mar-2016</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>KOTAKBANK</td>
+      <td>31-Mar-2016</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>KOTAKBANK</td>
+      <td>01-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>KOTAKBANK</td>
+      <td>04-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>KOTAKBANK</td>
+      <td>05-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>KOTAKBANK</td>
+      <td>06-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>KOTAKBANK</td>
+      <td>07-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>KOTAKBANK</td>
+      <td>08-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KOTAKBANK</td>
+      <td>11-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOTAKBANK</td>
+      <td>12-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>KOTAKBANK</td>
+      <td>13-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>KOTAKBANK</td>
+      <td>18-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>KOTAKBANK</td>
+      <td>20-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>KOTAKBANK</td>
+      <td>21-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>KOTAKBANK</td>
+      <td>22-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>KOTAKBANK</td>
+      <td>25-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>KOTAKBANK</td>
+      <td>26-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>KOTAKBANK</td>
+      <td>27-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>KOTAKBANK</td>
+      <td>28-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>KOTAKBANK</td>
+      <td>29-Apr-2016</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>KOTAKBANK</td>
+      <td>02-May-2016</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>KOTAKBANK</td>
+      <td>03-May-2016</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>KOTAKBANK</td>
+      <td>04-May-2016</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>KOTAKBANK</td>
+      <td>05-May-2016</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>KOTAKBANK</td>
+      <td>06-May-2016</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>KOTAKBANK</td>
+      <td>09-May-2016</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>KOTAKBANK</td>
+      <td>10-May-2016</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>KOTAKBANK</td>
+      <td>11-May-2016</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>KOTAKBANK</td>
+      <td>12-May-2016</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>472</th>
+      <td>KOTAKBANK</td>
+      <td>14-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>473</th>
+      <td>KOTAKBANK</td>
+      <td>15-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>474</th>
+      <td>KOTAKBANK</td>
+      <td>16-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>475</th>
+      <td>KOTAKBANK</td>
+      <td>19-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>476</th>
+      <td>KOTAKBANK</td>
+      <td>20-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>477</th>
+      <td>KOTAKBANK</td>
+      <td>21-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>478</th>
+      <td>KOTAKBANK</td>
+      <td>22-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>479</th>
+      <td>KOTAKBANK</td>
+      <td>23-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>480</th>
+      <td>KOTAKBANK</td>
+      <td>26-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>481</th>
+      <td>KOTAKBANK</td>
+      <td>27-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>482</th>
+      <td>KOTAKBANK</td>
+      <td>28-Feb-2018</td>
+    </tr>
+    <tr>
+      <th>483</th>
+      <td>KOTAKBANK</td>
+      <td>01-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>484</th>
+      <td>KOTAKBANK</td>
+      <td>05-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>485</th>
+      <td>KOTAKBANK</td>
+      <td>06-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>486</th>
+      <td>KOTAKBANK</td>
+      <td>07-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>487</th>
+      <td>KOTAKBANK</td>
+      <td>08-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>488</th>
+      <td>KOTAKBANK</td>
+      <td>09-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>489</th>
+      <td>KOTAKBANK</td>
+      <td>12-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>490</th>
+      <td>KOTAKBANK</td>
+      <td>13-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>491</th>
+      <td>KOTAKBANK</td>
+      <td>14-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>492</th>
+      <td>KOTAKBANK</td>
+      <td>15-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>493</th>
+      <td>KOTAKBANK</td>
+      <td>16-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>494</th>
+      <td>KOTAKBANK</td>
+      <td>19-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>495</th>
+      <td>KOTAKBANK</td>
+      <td>20-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>496</th>
+      <td>KOTAKBANK</td>
+      <td>21-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>497</th>
+      <td>KOTAKBANK</td>
+      <td>22-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>498</th>
+      <td>KOTAKBANK</td>
+      <td>23-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>499</th>
+      <td>KOTAKBANK</td>
+      <td>26-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>500</th>
+      <td>KOTAKBANK</td>
+      <td>27-Mar-2018</td>
+    </tr>
+    <tr>
+      <th>501</th>
+      <td>KOTAKBANK</td>
+      <td>28-Mar-2018</td>
+    </tr>
+  </tbody>
+</table>
+<p>502 rows × 2 columns</p>
+</div>
+
+
+
+
+```python
+df.tail(2)
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Symbol</th>
+      <th>Series</th>
+      <th>Date</th>
+      <th>Prev Close</th>
+      <th>Open Price</th>
+      <th>High Price</th>
+      <th>Low Price</th>
+      <th>Last Price</th>
+      <th>Close Price</th>
+      <th>Average Price</th>
+      <th>Total Traded Quantity</th>
+      <th>Turnover</th>
+      <th>No. of Trades</th>
+      <th>Deliverable Qty</th>
+      <th>% Dly Qt to Traded Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>500</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>27-Mar-2018</td>
+      <td>1039.35</td>
+      <td>1043.00</td>
+      <td>1058.0</td>
+      <td>1043.0</td>
+      <td>1049.30</td>
+      <td>1049.85</td>
+      <td>1051.41</td>
+      <td>2148618</td>
+      <td>2.259088e+09</td>
+      <td>31188</td>
+      <td>1680047</td>
+      <td>78.19</td>
+    </tr>
+    <tr>
+      <th>501</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>28-Mar-2018</td>
+      <td>1049.85</td>
+      <td>1044.05</td>
+      <td>1057.0</td>
+      <td>1040.6</td>
+      <td>1052.35</td>
+      <td>1047.80</td>
+      <td>1050.48</td>
+      <td>5927388</td>
+      <td>6.226583e+09</td>
+      <td>66343</td>
+      <td>5356167</td>
+      <td>90.36</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df.columns[:4] #print first 4 columns
+```
+
+
+
+
+    Index(['Symbol', 'Series', 'Date', 'Prev Close'], dtype='object')
+
+
+
+
+```python
+df.head(5)
+df[['Symbol','Date','Close Price']].max()
+```
+
+
+
+
+    Symbol           KOTAKBANK
+    Date           31-Oct-2017
+    Close Price        1120.95
+    dtype: object
+
+
+
+
+```python
+df[df['Close Price']>1100] #print a records whoes stocks prices greter than 1100
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Symbol</th>
+      <th>Series</th>
+      <th>Date</th>
+      <th>Prev Close</th>
+      <th>Open Price</th>
+      <th>High Price</th>
+      <th>Low Price</th>
+      <th>Last Price</th>
+      <th>Close Price</th>
+      <th>Average Price</th>
+      <th>Total Traded Quantity</th>
+      <th>Turnover</th>
+      <th>No. of Trades</th>
+      <th>Deliverable Qty</th>
+      <th>% Dly Qt to Traded Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>461</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>29-Jan-2018</td>
+      <td>1092.35</td>
+      <td>1092.0</td>
+      <td>1119.5</td>
+      <td>1091.00</td>
+      <td>1112.80</td>
+      <td>1115.10</td>
+      <td>1113.12</td>
+      <td>2215014</td>
+      <td>2.465587e+09</td>
+      <td>61658</td>
+      <td>1450105</td>
+      <td>65.47</td>
+    </tr>
+    <tr>
+      <th>463</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>31-Jan-2018</td>
+      <td>1088.05</td>
+      <td>1084.0</td>
+      <td>1113.2</td>
+      <td>1083.15</td>
+      <td>1109.00</td>
+      <td>1108.95</td>
+      <td>1102.40</td>
+      <td>3143011</td>
+      <td>3.464840e+09</td>
+      <td>82552</td>
+      <td>2399348</td>
+      <td>76.34</td>
+    </tr>
+    <tr>
+      <th>464</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>01-Feb-2018</td>
+      <td>1108.95</td>
+      <td>1105.1</td>
+      <td>1131.0</td>
+      <td>1105.10</td>
+      <td>1120.55</td>
+      <td>1120.95</td>
+      <td>1121.41</td>
+      <td>3856283</td>
+      <td>4.324479e+09</td>
+      <td>69029</td>
+      <td>2852508</td>
+      <td>73.97</td>
+    </tr>
+    <tr>
+      <th>480</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>26-Feb-2018</td>
+      <td>1080.85</td>
+      <td>1081.0</td>
+      <td>1109.6</td>
+      <td>1081.00</td>
+      <td>1105.00</td>
+      <td>1105.15</td>
+      <td>1099.18</td>
+      <td>1817998</td>
+      <td>1.998302e+09</td>
+      <td>56339</td>
+      <td>1122818</td>
+      <td>61.76</td>
+    </tr>
+    <tr>
+      <th>489</th>
+      <td>KOTAKBANK</td>
+      <td>EQ</td>
+      <td>12-Mar-2018</td>
+      <td>1082.45</td>
+      <td>1087.5</td>
+      <td>1105.0</td>
+      <td>1083.50</td>
+      <td>1097.55</td>
+      <td>1100.60</td>
+      <td>1097.67</td>
+      <td>1255474</td>
+      <td>1.378101e+09</td>
+      <td>37009</td>
+      <td>854262</td>
+      <td>68.04</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df[['Date','Close Price']][df['Close Price']==df['Close Price'].max()] #find a date and maximum price when closing price if maximum
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Close Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>464</th>
+      <td>01-Feb-2018</td>
+      <td>1120.95</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df[['Date','Close Price']][df['Close Price']<700] # find a date and price where closing prices are less than 700
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Close Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>29-Mar-2016</td>
+      <td>671.50</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>30-Mar-2016</td>
+      <td>683.85</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>31-Mar-2016</td>
+      <td>680.65</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>01-Apr-2016</td>
+      <td>679.90</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>04-Apr-2016</td>
+      <td>687.30</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>05-Apr-2016</td>
+      <td>668.75</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>06-Apr-2016</td>
+      <td>668.00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>07-Apr-2016</td>
+      <td>662.50</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>08-Apr-2016</td>
+      <td>665.35</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>11-Apr-2016</td>
+      <td>671.30</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>12-Apr-2016</td>
+      <td>677.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>13-Apr-2016</td>
+      <td>692.35</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>18-Apr-2016</td>
+      <td>683.35</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>20-Apr-2016</td>
+      <td>687.15</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>21-Apr-2016</td>
+      <td>686.70</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>22-Apr-2016</td>
+      <td>676.10</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>25-Apr-2016</td>
+      <td>680.45</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>24-May-2016</td>
+      <td>698.40</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>04-Jan-2017</td>
+      <td>695.60</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>05-Jan-2017</td>
+      <td>698.95</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
