@@ -6,12 +6,6 @@
 
 #### DESCRIPTION:
 
-	This was a practise done by me for Machine Learning .
+	This is basic practise with python and jupyter notebook .
 
-#### BUILDING AND EXECUTING:
-
-- ##### working :
-	
-	python3 program_name.py.
-
-for contribution Make Pull request Thanks 
+for contribution Make Pull request Thanks
